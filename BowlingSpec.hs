@@ -20,4 +20,9 @@ main = hspec $ do
 
     describe "An game with a 5 and all rolls knocking 0 pins" $ do
       it "scores 20" $ do
-        score (5:(replicate 19 0)) `shouldBe` 5
+        score (5 : (replicate 19 0)) `shouldBe` 5
+
+    describe "A spare" $ do
+      describe "in first position with a bonus of 1" $ do
+        it "scores 12" $ do
+          score ([3, 7, 1, 0] ++ (replicate 16 0)) `shouldBe` 12
