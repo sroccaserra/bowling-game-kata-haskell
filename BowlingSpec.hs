@@ -12,17 +12,21 @@ main = hspec $ do
 
     describe "A gutter game" $ do
       it "scores 0" $ do
-        score (replicate 20 0) `shouldBe` 0
+        let result = score $ replicate 20 0
+        result `shouldBe` 0
 
     describe "An game with all rolls knocking 1 pin" $ do
       it "scores 20" $ do
-        score (replicate 20 1) `shouldBe` 20
+        let result = score $ replicate 20 1
+        result `shouldBe` 20
 
     describe "An game with a 5 and all rolls knocking 0 pins" $ do
       it "scores 20" $ do
-        score (5 : (replicate 19 0)) `shouldBe` 5
+        let result = score $ 5 : (replicate 19 0)
+        result `shouldBe` 5
 
     describe "A spare" $ do
       describe "in first position with a bonus of 1" $ do
         it "scores 12" $ do
-          score ([3, 7, 1, 0] ++ (replicate 16 0)) `shouldBe` 12
+          let result = score $ [3, 7, 1, 0] ++ (replicate 16 0)
+          result `shouldBe` 12
