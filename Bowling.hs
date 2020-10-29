@@ -1,5 +1,6 @@
 module Bowling (score) where
 
+import Data.List
+
 score :: [Int] -> Int
-score (1:_) = 20
-score _ = 0
+score = sum

@@ -17,3 +17,7 @@ main = hspec $ do
     describe "An game with all rolls knocking 1 pin" $ do
       it "scores 20" $ do
         score (replicate 20 1) `shouldBe` 20
+
+    describe "An game with a 5 and all rolls knocking 0 pins" $ do
+      it "scores 20" $ do
+        score (5:(replicate 19 0)) `shouldBe` 5
