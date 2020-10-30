@@ -43,3 +43,8 @@ main = hspec $ do
         it "scores 12" $ do
           let result = score $ [0, 0, 5, 5, 1, 0] ++ (replicate 14 0)
           result `shouldBe` 12
+
+      describe "with points after bonus roll" $ do
+        it "scores 13" $ do
+          let result = score $ [0, 0, 5, 5, 1, 1] ++ (replicate 14 0)
+          result `shouldBe` 13
