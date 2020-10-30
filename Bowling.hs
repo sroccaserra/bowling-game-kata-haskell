@@ -17,15 +17,7 @@ scoreRec n xs = case xs of
   x:y:rest ->
     x + y + scoreRec (succ n) rest
   [_] -> error "Wrong number of rolls"
-
-isStrike :: Int -> Bool
-isStrike =
-  (==) 10
-
-isSpare :: Int -> Int -> Bool
-isSpare x y =
-  x + y == 10
-
-isLastFrame :: Int -> Bool
-isLastFrame =
-  (==) 10
+  where
+    isStrike = (==) 10
+    isSpare x y = x + y == 10
+    isLastFrame = (==) 10
