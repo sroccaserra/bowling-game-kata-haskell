@@ -24,7 +24,7 @@ main = hspec $ do
         result `shouldBe` 5
 
     describe "A spare" $ do
-      describe "in first position with a bonus of 1" $ do
+      describe "in first frame with a bonus of 1" $ do
         it "scores 12" $ do
           let result = score $ [3, 7, 1, 0] ++ (replicate 16 0)
           result `shouldBe` 12
@@ -38,3 +38,8 @@ main = hspec $ do
         it "scores 14" $ do
           let result = score $ [4, 6, 2, 0] ++ (replicate 16 0)
           result `shouldBe` 14
+
+      describe "in second frame with a bonus of 1" $ do
+        it "scores 12" $ do
+          let result = score $ [0, 0, 5, 5, 1, 0] ++ (replicate 14 0)
+          result `shouldBe` 12
