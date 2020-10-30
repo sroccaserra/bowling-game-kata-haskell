@@ -53,3 +53,9 @@ main = hspec $ do
         it "scores 11" $ do
           let result = score $ (replicate 18 0) ++ [5, 5, 1]
           result `shouldBe` 11
+
+    describe "A strike" $ do
+      describe "in first frame" $ do
+        it "scores 14" $ do
+          let result = score $ [10, 1, 1] ++ (replicate 16 0)
+          result `shouldBe` 14
