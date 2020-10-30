@@ -9,10 +9,10 @@ scoreRec _ [_] = div 1 0
 scoreRec 10 [x, y, z] = x + y + z
 scoreRec n (x:y:z:rest)
   | isStrike x =
-    10 + y + z + scoreRec (n + 1) (y:z:rest)
+    10 + y + z + scoreRec (succ n) (y:z:rest)
   | isSpare x y =
-    10 + z + scoreRec (n + 1) (z:rest)
-scoreRec n (x:y:rest) = x + y + scoreRec (n + 1) rest
+    10 + z + scoreRec (succ n) (z:rest)
+scoreRec n (x:y:rest) = x + y + scoreRec (succ n) rest
 
 isStrike :: Int -> Bool
 isStrike = (==) 10
