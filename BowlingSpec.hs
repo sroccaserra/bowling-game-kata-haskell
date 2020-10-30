@@ -35,3 +35,8 @@ main = hspec $ do
         it "scores 12" $ do
           let result = score $ [4, 6, 1, 0] ++ (replicate 16 0)
           result `shouldBe` 12
+
+      describe "with different bonus" $ do
+        it "scores 14" $ do
+          let result = score $ [4, 6, 2, 0] ++ (replicate 16 0)
+          result `shouldBe` 14
