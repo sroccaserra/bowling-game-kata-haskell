@@ -1,8 +1,8 @@
 module BowlingSpec where
 
-import Test.Hspec
-
 import Bowling
+
+import Test.Hspec
 
 main :: IO ()
 main = hspec $ do

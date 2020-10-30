@@ -12,3 +12,7 @@ $ cabal install QuickCheck --lib
 ```
 $ runhaskell -Wall -Werror BowlingTest.hs
 ```
+
+## Références
+
+- <https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/coding-style>
