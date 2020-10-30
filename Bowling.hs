@@ -5,7 +5,6 @@ score = scoreRec 1
 
 scoreRec :: Int -> [Int] -> Int
 scoreRec _ [] = 0
-scoreRec _ [_] = div 1 0
 scoreRec n [x, y, z]
   | isLastFrame n =
     x + y + z
@@ -16,6 +15,7 @@ scoreRec n (x:y:z:rest)
     10 + z + scoreRec (succ n) (z:rest)
 scoreRec n (x:y:rest) =
   x + y + scoreRec (succ n) rest
+scoreRec _ [_] = error "Wrong number of rolls"
 
 isStrike :: Int -> Bool
 isStrike = (==) 10
