@@ -48,3 +48,8 @@ main = hspec $ do
         it "scores 13" $ do
           let result = score $ [0, 0, 5, 5, 1, 1] ++ (replicate 14 0)
           result `shouldBe` 13
+
+      describe "with spare in last frame" $ do
+        it "scores 11" $ do
+          let result = score $ (replicate 18 0) ++ [5, 5, 1]
+          result `shouldBe` 11
