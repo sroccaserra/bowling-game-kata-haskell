@@ -59,3 +59,8 @@ main = hspec $ do
         it "scores 14" $ do
           let result = score $ [10, 1, 1] ++ (replicate 16 0)
           result `shouldBe` 14
+
+      describe "in ninth frame with a bonus of 2" $ do
+        it "scores 14" $ do
+          let result = score $ (replicate 16 0) ++ [10, 1, 1]
+          result `shouldBe` 14
