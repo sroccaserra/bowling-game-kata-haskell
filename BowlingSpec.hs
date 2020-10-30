@@ -30,3 +30,8 @@ main = hspec $ do
         it "scores 12" $ do
           let result = score $ [3, 7, 1, 0] ++ (replicate 16 0)
           result `shouldBe` 12
+
+      describe "of other values" $ do
+        it "scores 12" $ do
+          let result = score $ [4, 6, 1, 0] ++ (replicate 16 0)
+          result `shouldBe` 12
