@@ -6,10 +6,9 @@ score = score' 1
 score' :: Int -> [Int] -> Int
 score' n xs = case xs of
   [] -> 0
-  [x, y, z]
+  x:y:z:rest
     | isLastFrame n ->
       x + y + z
-  x:y:z:rest
     | isStrike x ->
       10 + y + z + score' next_n (y:z:rest)
     | isSpare x y ->
