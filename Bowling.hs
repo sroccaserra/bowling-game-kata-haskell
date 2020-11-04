@@ -1,19 +1,21 @@
-module Bowling (score) where
+module Bowling (score, Roll(..)) where
 
-score :: [Int] -> Int
+data Roll = Roll Int
+
+score :: [Roll] -> Int
 score = score' 1
 
-score' :: Int -> [Int] -> Int
+score' :: Int -> [Roll] -> Int
 score' n xs = case xs of
   [] -> 0
-  x:y:z:rest
+  Roll x:Roll y:Roll z:rest
     | isLastFrame n ->
       x + y + z
     | isStrike x ->
-      10 + y + z + score' n' (y:z:rest)
+      10 + y + z + score' n' (Roll y:Roll z:rest)
     | isSpare x y ->
-      10 + z + score' n' (z:rest)
-  x:y:rest ->
+      10 + z + score' n' (Roll z:rest)
+  Roll x: Roll y:rest ->
     x + y + score' n' rest
   [_] -> error "Wrong number of rolls"
   where
